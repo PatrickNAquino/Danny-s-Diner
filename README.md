@@ -122,16 +122,28 @@ SELECT
 	COUNT(product_id) times_purchased_ramen
 FROM sales
 INNER JOIN menu USING(product_id)
+WHERE product_name = 'ramen'
+GROUP BY 1
+;
+
+-- Best way using subquery
+SELECT
+	customer_id,
+	COUNT(product_id) times_purchased_ramen
+FROM sales
+INNER JOIN menu USING(product_id)
 WHERE product_name = (
-			SELECT
-				product_name,
-				COUNT(product_name)
-			FROM sales
-			INNER JOIN menu USING(product_id)
-			GROUP BY 1
-			ORDER BY 2 DESC
-			LIMIT 1
-			)
+			SELECT product_name
+            		FROM(
+				SELECT
+					product_name,
+					COUNT(product_name)
+				FROM sales
+				INNER JOIN menu USING(product_id)
+				GROUP BY 1
+				ORDER BY 2 DESC
+				LIMIT 1
+			) AS subquery)
 GROUP BY 1
 ;
 ```
