@@ -67,6 +67,8 @@ GROUP BY 1
 ORDER BY 2 DESC
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/7a1269f3-f0c1-4f03-b3b3-6279cbce2307)
+
 
 2. How many days has each customer visited the restaurant?
 ```mysql
@@ -78,6 +80,7 @@ GROUP BY 1
 ORDER BY 2 DESC
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/d864e9a6-4754-4338-96dd-29b20d413ca7)
 
 3. What was the first item from the menu purchased by each customer?
 ```mysql
@@ -103,6 +106,7 @@ FROM(
 WHERE rn = 1
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/a11ef0f5-79cb-48d5-a31d-98e9cb1fc214)
 
 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 ```mysql
@@ -147,6 +151,7 @@ WHERE product_name = (
 GROUP BY 1
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/198f2fe2-1191-4067-9dfa-ca3fa368f730)
 
 5. Which item was the most popular for each customer?
 ```mysql
@@ -169,6 +174,8 @@ WHERE rn = 1
 GROUP BY 1,2
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/cf49c216-1f24-4854-acbe-4032af8ec77b)
+
 6. Which item was purchased first by the customer after they became a member?
 ```mysql
 SELECT
@@ -186,6 +193,7 @@ FROM(
 WHERE rn = 1
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/31005f20-2366-4877-b00e-0bc546bfd2ed)
 
 7. Which item was purchased just before the customer became a member?
 ```mysql
@@ -204,6 +212,7 @@ FROM(
 WHERE rn = 1
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/e81dc1d5-f4f9-48b3-ada0-a9a64b8bef52)
 
 8. What is the total items and amount spent for each member before they became a member?
 ```mysql
@@ -218,6 +227,7 @@ WHERE order_date < join_date
 GROUP BY 1
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/d6699608-e05d-4288-a7fa-ca36f89f2225)
 
 9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 ```mysql
@@ -232,6 +242,7 @@ WHERE order_date >= join_date
 GROUP BY 1
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/6d0b845a-11e9-4a5d-8a82-2a86cea67de2)
 
 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
 ```mysql
@@ -261,6 +272,7 @@ FROM(
 GROUP BY 1
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/b733cb38-0b98-4fa5-98d1-bc638e576c23)
 
 -- BONUS QUESTIONS
 
@@ -279,6 +291,7 @@ LEFT JOIN menu USING(product_id)
 LEFT JOIN members USING(customer_id)
 ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/4f0bfb22-a18a-4184-92bb-7c5f12bf6920)
 
 Rank All The Things
 ```mysql
@@ -305,3 +318,4 @@ SELECT
  FROM CTE_joined_table
  ;
 ```
+![image](https://github.com/PatrickNAquino/Danny-s-Diner/assets/118391206/b05b328b-e4b7-48f5-ab2a-76257d486d2b)
